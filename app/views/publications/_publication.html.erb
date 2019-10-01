@@ -1,0 +1,35 @@
+<br>
+<div class=" alert sm">
+    <div class="card">
+        <div class="card-header sm">
+            <% if publication.user.name?%>
+                <b class="font-size-2 color-black" >Autor:</b><b class="margin-left font-size-3 alert-danger"><%= publication.user.name %></b>
+            <% else %>
+                <b class="font-size-2 color-black" >Autor:</b><b class="margin-left font-size-3 alert-danger"><%= publication.user.email %></b>
+            <%  end %>
+            <% if user_signed_in?%>
+                <% if publication.user.id == current_user.id%>
+                    <li class="nav-item dropdown float-right li-a list">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu">
+                            <%= link_to 'Editar', edit_publication_path(publication), class:" sm  dropdown-item"%>
+                            <%= link_to 'Eliminar', publication, method: :delete, data: {confirm: 'Seguro?'}, class:"sm dropdown-item" %> 
+                        </div>
+                    </li>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="card-body">
+            <b class="font-size-1 color-black alert-info">Titulo:</b><%= publication.title %><b class="float-right alert-info">Fecha Publicacion: <%= publication.created_at.strftime("%d %B %l:%M%p")%></b> <br>
+            <% if publication.content.length > 100%>
+                <p class="card-text color-black espacio-arriba justificado"><%= publication.content.truncate_words(70).html_safe %></p>
+            <% else %>
+            <p class="card-text color-black espacio-arriba"><%= publication.content.html_safe %> </p>
+            <% end %>
+        </div>
+        <br>
+        <div class="container">
+            <%= link_to "Ver Publicacion", publication, class: "btn btn-primary float-right" %>
+        </div> <br>
+    </div>
+</div> <br>

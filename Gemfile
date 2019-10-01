@@ -2,6 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #version of ruby
 ruby '2.6.3'
+
+#id of publication
+gem 'friendly_id', '~> 5.2.4'
+#the see 
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
+#for pagination
+gem 'will_paginate', '~> 3.1.0'
 #for development of users
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

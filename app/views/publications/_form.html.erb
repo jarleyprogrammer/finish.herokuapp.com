@@ -1,0 +1,22 @@
+<div class="container form-group sm ">
+  <%= form_for @publication do |f| %>
+    <%= f.label "Titulo", class: "form-control color-blanco bg-info sm  align-center" %> 
+    <%= f.text_field :title, class: "form-control sm" %><br> <br>
+    <%= f.label "Contenido",id: "form", class: "form-control color-blanco bg-danger sm  align-center" %>
+    <%= f.text_area :content, as: :wysihtml5, class: "form-control textarea" %>
+
+    <%=f.submit 'Publicar', :class => 'btn btn-dark form-control sm' %>
+  <% end %> 
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.textarea').each(function(i, elem) {
+      $(elem).wysihtml5();
+      //$('.wysihtml5').wysihtml5({'toolbar': {'blockquote': false, 'html': true}})
+    });
+  })
+
+</script>
