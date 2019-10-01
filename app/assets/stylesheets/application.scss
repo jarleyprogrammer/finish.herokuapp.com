@@ -15,4 +15,65 @@
  *= require bootstrap-wysihtml5
  */
 
- @import "bootstrap-wysihtml5/bootstrap3-wysihtml5"
+ @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+
+#logo{
+width: 30px;
+height: 30px;
+}
+
+.color-blanco{
+color: white;
+}
+
+.align-center{
+text-align: center;
+}
+
+.flotar-izquierda{
+float: left;
+}
+
+#cajitas{
+width: 200px;
+}
+
+#boton{
+color: black;
+}
+
+
+
+.izquierda{
+float: left;
+}   
+
+.material-icons{
+margin: -1px;
+border: none;
+}
+
+#input{
+border:none;
+float: left;
+}
+
+.desc{
+font-size: 15px;
+}
+
+aside{
+width: 150px;
+float: left;
+}
+
+
+.contenido{
+float: left;
+}
+
+.espacio-arriba{
+margin-top: 10px;
+}
+ 
+ 

@@ -19,8 +19,8 @@ class PublicationsController < ApplicationController
     
     #binding.pry
     #begin
-      @publication = current_user.publications.new(public_params)
-      
+      @publication = current_user.publications.create(public_params)
+      #@publication.save
       if @publication.save
         redirect_to publications_path
       else
@@ -29,16 +29,16 @@ class PublicationsController < ApplicationController
   end
 
   def show
-                    @publication = Publication.friendly.find params[:id]
-                    puts "****************************"
-                    puts "****************************"
-                    
-                    puts "****************************"
-                    publication = Publication.find_by(slug: params[:id])
-                    
-                    @next = Publication.where("id > ?", publication.id).first
-                    @prev = Publication.where("id < ?", publication.id).last
-                    p @prev
+    @publication = Publication.friendly.find params[:id]
+    puts "****************************"
+    puts "****************************"
+    
+    puts "****************************"
+    publication = Publication.find_by(slug: params[:id])
+    
+    @next = Publication.where("id > ?", publication.id).first
+    @prev = Publication.where("id < ?", publication.id).last
+    p @prev
   end
 
   def edit

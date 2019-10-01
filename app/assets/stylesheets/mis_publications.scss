@@ -1,3 +1,44 @@
 // Place all the styles related to the mis_publications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.espacio-arriba{
+    margin-top: 20px;
+}
+
+#img{
+    display: block;
+    margin: auto;
+    width: 70%;
+    height: 70%;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+
+.color-blanco{
+    color: white;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.previous_page{
+    padding: 10px;
+    background-color:  rgb(54, 53, 53);
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.next_page{
+    margin-left: 10px;
+    color: white;
+    padding: 10px;
+    background-color: rgb(54, 53, 53);
+    border-radius: 10px;
+}

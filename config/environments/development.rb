@@ -9,6 +9,22 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  #amazon
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_region: ENV["AWS_S3_REGION"],
+    s3_credentials: {
+      s3_host_name: ENV["AWS_S3_HOST_NAME"],
+      bucket: ENV['S3_BUCKET_NAME'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    bucket: ENV['S3_BUCKET_NAME']
+  }
+
+  Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
+  Paperclip::Attachment.default_options[:path] = "/:class/:id/:basename_:style.:extension"
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

@@ -24,8 +24,9 @@
             <% if publication.content.length > 100%>
                 <p class="card-text color-black espacio-arriba justificado"><%= publication.content.truncate_words(70).html_safe %></p>
             <% else %>
-            <p class="card-text color-black espacio-arriba"><%= publication.content.html_safe %> </p>
+                <p class="card-text color-black espacio-arriba"><%= publication.content.html_safe %> </p>
             <% end %>
+            <%= image_tag publication.image.url%>
         </div>
         <br>
         <div class="container">

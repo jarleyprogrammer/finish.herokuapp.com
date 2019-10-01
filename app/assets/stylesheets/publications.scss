@@ -1,3 +1,96 @@
 // Place all the styles related to the publications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.espacio-arriba{
+    margin-top: 30px;
+}
+
+#img{
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+
+.color-blanco{
+    color: white;
+}
+
+.align-center{
+    text-align: center;
+}
+
+#center{
+    display: block;
+    margin: auto;
+}
+
+.list{
+    text-decoration: none;
+    list-style: none;
+}
+
+.previous_page{
+    padding: 10px;
+    background-color:  rgb(54, 53, 53);
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.next_page{
+    margin-left: 10px;
+    color: white;
+    padding: 10px;
+    background-color: rgb(54, 53, 53);
+    border-radius: 10px;
+}
+
+.derecha{
+    float: right;
+}
+
+.tamaño1{
+    font-size: 20px;
+}
+ 
+.izquierda{
+    float: left;
+}
+
+aside{
+    width: 150px;
+    float: left;
+    background: burlywood;
+
+}
+section{
+    width: 1500px;
+    background: burlywood;
+}
+
+.contenido{
+    width: 800px;
+    float: left;
+}
+
+.auto{
+    display: block;
+    margin: auto;
+}
+
+.centro{
+    display: block;
+    margin: auto;
+}
+
+.textarea{
+    height: 100px;
+}

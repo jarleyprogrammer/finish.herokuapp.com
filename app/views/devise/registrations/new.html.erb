@@ -1,5 +1,8 @@
 <div class="container">
-    <h2>Registro</h2>
+
+  <div class="alert alert-dark">
+    <h2 class="alert alert-dark bg-dark color-blanco align-center">Registro</h2>
+
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -38,5 +41,5 @@
     <% end %>
     
     <%= render "devise/shared/links" %>
-    
+  </div>
 </div>

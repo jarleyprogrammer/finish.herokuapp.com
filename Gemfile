@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #version of ruby
 ruby '2.6.3'
 
+#amazon
+gem 'aws-sdk-s3', '~> 1'
+#images
+gem "paperclip", "~> 6.0.0"
 #id of publication
 gem 'friendly_id', '~> 5.2.4'
 #the see 
