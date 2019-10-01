@@ -26,7 +26,7 @@
             <% else %>
                 <p class="card-text color-black espacio-arriba"><%= publication.content.html_safe %> </p>
             <% end %>
-            <%= image_tag publication.image.url%>
+            <%= image_tag publication.image.url, id: "img"%>
         </div>
         <br>
         <div class="container">
