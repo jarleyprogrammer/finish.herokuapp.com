@@ -29,7 +29,7 @@ Rails.application.configure do
   #mandril
   
   #config.action_mailer.default_url_options = { host: 'finish-blog.herokuapp.com' }
-  config.action_mailer.delivery_method = :smpt
+  #config.action_mailer.delivery_method = :smpt
   config.action_mailer.smtp_settings = {address: "localhost", port:587 }
   ## TO RESET PASSWORD INSTRUCTION URL
   config.action_mailer.default_url_options = { host: ENV["PASSWORD_RECOVERY_PRIMARY_DOMAIN"] }
