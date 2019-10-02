@@ -4,4 +4,8 @@ class PerfilController < ApplicationController
 
   end
 
+
+  def public_params
+    params.require(:user).permit(:name, :surname)
+  end
 end
