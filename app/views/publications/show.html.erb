@@ -12,7 +12,7 @@
                 <%  end %>
                 <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
             </div>
-            <%= image_tag @publication.image.url, id: "img"%>
+            <%= image_tag @publication.image.url, id: "img"%> <br>
             <div class="container">
                 <% if @prev %>
                     <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 
@@ -35,7 +35,7 @@
                 <%  end %>
                 <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
             </div>
-            <%= image_tag @publication.image.url, id: "img"%>
+            <%= image_tag @publication.image.url, id: "img"%> <br>
             <div class="container">
                 <% if @prev %>
                     <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 

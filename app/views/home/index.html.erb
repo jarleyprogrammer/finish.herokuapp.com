@@ -2,7 +2,7 @@
         <h2 class="alert alert-dark bg-dark align-center color-blanco">Que Deseas Ver </h2>
         <div class="card-group container">
             <div class="card card-1 container"> <br>
-                <%= image_tag asset_path('publicaciones.png'), id: "img" %>
+                <%= image_tag asset_path('publicaciones.png'), id: "picture" %>
                 <div class="card-body">
                     <h5 class="card-title"><b>PUBLICACIONES</b></h5>
                     <p class="card-text justificado">Todas las publicaciones</p>
@@ -10,7 +10,7 @@
                 </div> <br>
             </div> 
             <div class="card card-1 container"> <br>
-                <%= image_tag asset_path('acerca.jpg'), id:"img" %>
+                <%= image_tag asset_path('acerca.jpg'), id:"picture" %>
                 <div class="card-body">
                     <h5 class="card-title"><b>ACERCA DE </b></h5>
                     <p class="card-text justificado">Informacion de Vecindario</p>
@@ -21,7 +21,7 @@
         <% if user_signed_in?%>
         <div class="card-group container">
             <div class="card card-1 container"> <br>
-                <%= image_tag asset_path('usuario.jpg'), id: "img" %>
+                <%= image_tag asset_path('usuario.jpg'), id: "picture" %>
                 <div class="card-body">
                     <h5 class="card-title"><b>Mis Publicaciones</b></h5>
                     <p class="card-text">Publicaciones hechas por mi.</p>
@@ -29,7 +29,7 @@
                 </div> 
             </div>
             <div class="card card-1 container" > <br>
-                <%= image_tag asset_path('avatar.png'), id: "img" %>
+                <%= image_tag asset_path('avatar.png'), id: "picture" %>
                 <div class="card-body">
                     <h5 class="card-title"><b>Ver Perfil</b></h5>
                     <p class="card-text">Ver tus datos personales</p>
