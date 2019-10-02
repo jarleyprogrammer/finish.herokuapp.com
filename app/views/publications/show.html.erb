@@ -7,9 +7,9 @@
                 </div>
                 <div class="card-body">
                     <% if @publication.user.name?%>
-                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3 vista"><%= @publication.user.name %></b>
                     <% else %>
-                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3 vista"><%= @publication.user.email %></b>
                     <%  end %>
                     <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
                 </div>
@@ -30,9 +30,9 @@
                 </div>
                 <div class="card-body">
                     <% if @publication.user.name?%>
-                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3 vista"><%= @publication.user.name %></b>
                     <% else %>
-                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3 vista"><%= @publication.user.email %></b>
                     <%  end %>
                     <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
                 </div>
