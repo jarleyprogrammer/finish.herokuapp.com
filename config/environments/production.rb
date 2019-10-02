@@ -27,7 +27,7 @@ Rails.application.configure do
   Paperclip::Attachment.default_options[:path] = "/:class/:id/:basename_:style.:extension"
 
   #mandril
-  
+  #config del host de heroku
   config.action_mailer.default_url_options = { host: 'finish-blog.herokuapp.com' }
   #config.action_mailer.delivery_method = :smpt
   #config.action_mailer.smtp_settings = {address: "localhost", port:587 }
@@ -43,7 +43,7 @@ Rails.application.configure do
       :password       => ENV['MANDRILL_PASSWORD']
   }
 
-  # Full error reports are disabled and caching is turned on.
+  # Full error reports are disabled and caching is turned on.----previere el error de activacion
   config.consider_all_requests_local       = true
 
   config.action_controller.perform_caching = true
