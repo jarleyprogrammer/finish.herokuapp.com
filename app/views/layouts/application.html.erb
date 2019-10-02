@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('pp.ico')%>
+    <link href="https://fonts.googleapis.com/css?family=Gayathri|Squada+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,59 +19,69 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><%= image_tag asset_path('pp.ico'), id: "logo"%>Blogindario</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <% if user_signed_in? %>
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/publications">Publicaciones<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/acerca_de">Nosotros</a>
-              </li>
-              <li class="nav-item active dropdown">
-                <% if current_user.name?%>
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= current_user.name%>
-                  </a>
-                <% else %>
+      <a class="navbar-brand" href="/"><%= image_tag asset_path('pp.ico'), id: "logo"%>Blogindario</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if user_signed_in? %>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/publications">Publicaciones<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/acerca_de">Nosotros</a>
+            </li>
+            <li class="nav-item active dropdown">
+              <% if current_user.name?%>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= current_user.email%>
+                  <%= current_user.name%>
                 </a>
-                <%end%>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/mis_publications">Mis Publicaciones</a>
-                  <a class="dropdown-item" href="#">Perfil</a>
-                  <div class="dropdown-divider"></div>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
-                </div>
-              </li>
-            </ul>
-          <% else %>
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/publications">Publicaciones<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="<%= new_user_registration_path%>">Registro <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="<%= new_user_session_path %>">Login</a>
-              </li>
-            </ul>
-          <% end %>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+              <% else %>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.email%>
+              </a>
+              <%end%>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/mis_publications">Mis Publicaciones</a>
+                <a class="dropdown-item" href="#">Perfil</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+              </div>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/publications">Publicaciones<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= new_user_registration_path%>">Registro <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= new_user_session_path %>">Login</a>
+            </li>
+          </ul>
+        <% end %>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!--esconde el notice y el alert en las vistas-->
+    <% if notice %>
+      <script type="text/javascript">
+        Materialize.toast('<%= notice %>', 4000)
+      </script>
+    <% end %>
+    <% if alert %>
+      <script type="text/javascript">
+        Materialize.toast('<%= alert %>', 4000)
+      </script>
+    <% end %>
     <%= yield %>
   </body>
+  
 </html>

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container alert alert-dark bg-dark">
 
-  <div class="alert alert-dark">
+  <div class="alert alert-dark form-group">
     <h2 class="alert alert-dark bg-dark color-blanco align-center">Registro</h2>
 
 
@@ -9,36 +9,36 @@
     
       <div class="field">
           <%= f.label "Nombres" %><br />
-          <%= f.text_field :name, autofocus: true %>
-      </div>
+          <%= f.text_field :name, autofocus: true , class: "form-control"%>
+      </div> <br>
     
       <div class="field">
         <%= f.label "Apellidos" %><br />
-        <%= f.text_field :surname %>
-      </div>
+        <%= f.text_field :surname , class: "form-control"%>
+      </div> <br>
     
       <div class="field">
         <%= f.label "Correo" %><br />
-        <%= f.email_field :email %>
-      </div>
+        <%= f.email_field :email , class: "form-control"%>
+      </div> <br>
     
       <div class="field">
         <%= f.label "Contraseña" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> Caracteres Minimo)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      </div> <br>
     
       <div class="field">
         <%= f.label "Confirmar contraseña" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      </div> <br>
     
       <div class="actions">
-        <%= f.submit "Registrarte" %>
+        <%= f.submit "Registrarte" , class: "btn btn-dark"%>
       </div>
-    <% end %>
+    <% end %> <br>
     
     <%= render "devise/shared/links" %>
   </div>

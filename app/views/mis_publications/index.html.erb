@@ -1,13 +1,17 @@
-<div class=" container alert alert-dark">
-    <div class=" margin-left "> <br>
-        <div>
-            <h3 class="alert color-blanco bg-dark align-center">Mis Publicaciones(<%= @publications.count%>)</h3>
-            <%= link_to 'Nueva Publicacion', new_publication_path, class: "btn btn-success" %>
+
+<div class=" container alert alert-dark bg-dark">
+   <div class="alert alert-dark">
+        <div class=" margin-left "> <br>
+            <div>
+                <h3 class="alert color-blanco bg-dark align-center">Mis Publicaciones(<%= @publications.count%>)</h3>
+                <%= link_to 'Nueva Publicacion', new_publication_path, class: "btn btn-success" %>
+            </div> 
+        </div>
+        <div class="container" id="imagenes">  
+            <%= render @publications %>
         </div> 
-    </div>
-    <div class="container" id="imagenes">  
-        <%= render @publications %>
-    </div> 
-    <%= will_paginate @publications ,  :previous_label => 'Atras', :next_label => 'Siguiente', class: "alert alert-warning align-center"%>
+        <%= will_paginate @publications ,  :previous_label => 'Atras', :next_label => 'Siguiente', class: "alert alert-warning align-center"%>
+   </div>
 </div>
+
     

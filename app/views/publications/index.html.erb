@@ -1,5 +1,7 @@
-<div class="container alert alert-dark">
-    <b><h3 class="alert color-blanco bg-dark align-center " > Publicaciones </h3></b>
-    <%= render @publications %>
-    <%= will_paginate @publications ,  :previous_label => 'Atras', :next_label => 'Siguiente', class: "alert alert-warning align-center"%>
+<div class="container alert alert-dark bg-dark">
+    <div class="alert alert-dark">
+        <b><h3 class="alert color-blanco bg-dark align-center " > Publicaciones(<%= @publications.count%>) </h3></b>
+        <%= render @publications %>
+        <%= will_paginate @publications ,  :previous_label => 'Atras', :next_label => 'Siguiente', class: "alert alert-warning align-center"%>
+    </div>
 </div>
