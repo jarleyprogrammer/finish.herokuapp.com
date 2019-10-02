@@ -1,50 +1,52 @@
-<div class="container sm alert alert-dark"> <br>
-    <% if user_signed_in?%>
+<div class="container alert alert-dark bg-dark">
+    <div class="sm alert alert-dark"> <br>
+        <% if user_signed_in?%>
+            <div class="card">
+                <div class="card-header">
+                    <b class="card-title tamaño1 alert-success titulo">Titulo: </b><%= @publication.title %><b class="derecha alert-info"> Fecha Publicacion: <%= @publication.created_at&.strftime("%d %B %l:%M%p")%></b>
+                </div>
+                <div class="card-body">
+                    <% if @publication.user.name?%>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
+                    <% else %>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
+                    <%  end %>
+                    <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
+                </div>
+                <%= image_tag @publication.image.url, id: "img"%> <br>
+                <div class="container">
+                    <% if @prev %>
+                        <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 
+                    <% end %>
+                    <% if @next %>
+                        <%= link_to "Sig", publication_path(@next), id: "next", class: "btn btn-dark derecha "%>
+                    <% end %>
+                </div> <br>
+            </div>
+        <% else %>
         <div class="card">
-            <div class="card-header">
-                <b class="card-title tamaño1 alert-success">Titulo:</b><%= @publication.title %><b class="derecha alert-info"> Fecha Publicacion: <%= @publication.created_at&.strftime("%d %B %l:%M%p")%></b>
+                <div class="card-header">
+                    <b class="card-title tamaño1 alert-success">Titulo:</b><%= @publication.title %><b class="derecha alert-info"> Fecha Publicacion: <%= @publication.created_at&.strftime("%d %B %l:%M%p")%></b>
+                </div>
+                <div class="card-body">
+                    <% if @publication.user.name?%>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
+                    <% else %>
+                        <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
+                    <%  end %>
+                    <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
+                </div>
+                <%= image_tag @publication.image.url, id: "img"%> <br>
+                <div class="container">
+                    <% if @prev %>
+                        <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 
+                    <% end %>
+                    <% if @next %>
+                        <%= link_to "Sig", publication_path(@next), id: "next", class: "btn btn-dark derecha"%>
+                    <% end %>
+                </div> <br>
             </div>
-            <div class="card-body">
-                <% if @publication.user.name?%>
-                    <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
-                <% else %>
-                    <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
-                <%  end %>
-                <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
-            </div>
-            <%= image_tag @publication.image.url, id: "img"%> <br>
-            <div class="container">
-                <% if @prev %>
-                    <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 
-                <% end %>
-                <% if @next %>
-                    <%= link_to "Sig", publication_path(@next), id: "next", class: "btn btn-dark derecha "%>
-                <% end %>
-            </div> <br>
-        </div>
-    <% else %>
-    <div class="card">
-            <div class="card-header">
-                <b class="card-title tamaño1 alert-success">Titulo:</b><%= @publication.title %><b class="derecha alert-info"> Fecha Publicacion: <%= @publication.created_at&.strftime("%d %B %l:%M%p")%></b>
-            </div>
-            <div class="card-body">
-                <% if @publication.user.name?%>
-                    <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.name %></b>
-                <% else %>
-                    <b class="font-size-2 color-black alert-danger" >Autor: </b><b class="margin-left font-size-3"><%= @publication.user.email %></b>
-                <%  end %>
-                <p class="card-text espacio-arriba justificado"><%= @publication.content.html_safe %> </p>    
-            </div>
-            <%= image_tag @publication.image.url, id: "img"%> <br>
-            <div class="container">
-                <% if @prev %>
-                    <%= link_to "Ant", publication_path(@prev), id: "prev", class: "btn btn-dark"%> 
-                <% end %>
-                <% if @next %>
-                    <%= link_to "Sig", publication_path(@next), id: "next", class: "btn btn-dark derecha"%>
-                <% end %>
-            </div> <br>
-        </div>
-    <% end %>
-    <br> 
-</div> 
+        <% end %>
+        <br> 
+    </div> 
+</div>

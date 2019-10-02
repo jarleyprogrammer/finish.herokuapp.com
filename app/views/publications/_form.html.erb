@@ -3,8 +3,8 @@
     <%= f.label "Titulo", class: "form-control color-blanco bg-info sm  align-center" %> 
     <%= f.text_field :title, class: "form-control sm" %><br> <br>
     <%= f.label "Contenido",id: "form", class: "form-control color-blanco bg-danger sm  align-center" %>
-    <%= f.text_area :content, as: :wysihtml5, class: "form-control textarea" %>
-    <%= f.file_field :image %>
+    <%= f.text_area :content, as: :wysihtml5, class: "form-control textarea" %> <br>
+    <%= f.file_field :image, class: "container btn btn-success"%> <br> <br>
     <%=f.submit 'Publicar', :class => 'btn btn-dark form-control sm' %>
   <% end %> 
 </div>
