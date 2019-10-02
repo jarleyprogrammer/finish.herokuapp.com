@@ -28,11 +28,11 @@ Rails.application.configure do
 
   #mandril
   
-  #config.action_mailer.default_url_options = { host: 'finish-blog.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'finish-blog.herokuapp.com' }
   #config.action_mailer.delivery_method = :smpt
-  config.action_mailer.smtp_settings = {address: "localhost", port:587 }
+  #config.action_mailer.smtp_settings = {address: "localhost", port:587 }
   ## TO RESET PASSWORD INSTRUCTION URL
-  config.action_mailer.default_url_options = { host: ENV["PASSWORD_RECOVERY_PRIMARY_DOMAIN"] }
+  #config.action_mailer.default_url_options = { host: ENV["PASSWORD_RECOVERY_PRIMARY_DOMAIN"] }
   config.action_mailer.smtp_settings = {
       :address        => "smtp.mandrillapp.com",
       :port           => 587,
@@ -44,7 +44,8 @@ Rails.application.configure do
   }
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
+
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
