@@ -27,6 +27,8 @@ Rails.application.configure do
   Paperclip::Attachment.default_options[:path] = "/:class/:id/:basename_:style.:extension"
 
   #mandril
+  
+  config.action_mailer.default_url_options = { host: 'finish-blog.herokuapp.com' }
   ## TO RESET PASSWORD INSTRUCTION URL
   config.action_mailer.default_url_options = { host: ENV["PASSWORD_RECOVERY_PRIMARY_DOMAIN"] }
 
