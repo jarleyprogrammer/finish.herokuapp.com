@@ -26,6 +26,20 @@ Rails.application.configure do
   Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
   Paperclip::Attachment.default_options[:path] = "/:class/:id/:basename_:style.:extension"
 
+  #mandril
+  ## TO RESET PASSWORD INSTRUCTION URL
+  config.action_mailer.default_url_options = { host: ENV["PASSWORD_RECOVERY_PRIMARY_DOMAIN"] }
+
+  config.action_mailer.smtp_settings = {
+      :address        => "smtp.mandrillapp.com",
+      :port           => 587,
+      :domain         => 'vecindario.com',
+      :authentication => 'plain',
+      :enable_starttls_auto => true,
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_PASSWORD']
+  }
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

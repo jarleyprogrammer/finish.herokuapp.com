@@ -25,10 +25,24 @@ Rails.application.configure do
   Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
   Paperclip::Attachment.default_options[:path] = "/:class/:id/:basename_:style.:extension"
 
+  #mandril
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+      :address        => "smtp.mandrillapp.com",
+      :port           => 587,
+      :domain         => 'vecindario.com',
+      :authentication => 'plain',
+      :enable_starttls_auto => true,
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_PASSWORD']
+  }  
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
   #port fou use
+  #config.action_mailer.delivery_method = :smpt
+  #config.action_mailer.smtp_settings = {address: "localhost", port:587 }
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Enable/disable caching. By default caching is disabled.
