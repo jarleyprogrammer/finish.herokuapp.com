@@ -6,6 +6,6 @@
             <b>Apellidos: </b><p><%= current_user.surname%></p>
             <b>Correo: </b><p><%= current_user.email%></p>
         </div>
-        
+        <%= link_to "Actualizar", edit_user_registration_path, class: "btn btn-info" %>
     </div>
 </div>
